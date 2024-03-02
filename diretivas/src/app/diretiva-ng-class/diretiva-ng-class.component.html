@@ -1,0 +1,19 @@
+<h3> Diretiva Ng-Class</h3>
+
+<button class="btn"
+[class.btn-secondary]="!botaoAtivo"
+[class.btn-primary]="botaoAtivo"
+(click)="onClick()">
+    Me Clique!
+</button>
+
+<br><br>
+
+<button class="btn"
+[ngClass]="{
+  'btn-secondary' : !botaoAtivo ,
+  'btn-primary' : botaoAtivo
+}"
+(click)="onClick()">
+    Me Clique!
+</button>

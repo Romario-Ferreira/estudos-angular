@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+  <div class="nav navbar-nav">
+    <a class="nav-item nav-link"
+      [class.active]="aba == 'home'"
+      (click)="aba='home'">Home</a>
+    <a class="nav-item nav-link"
+    [class.active]="aba == 'lista'"
+    (click)="aba='lista'">Lista</a>
+    <a class="nav-item nav-link"
+    [class.active]="aba == 'sobre'"
+    (click)="aba='sobre'">Sobre</a>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'lista'">Lista</p>
+  <p *ngSwitchCase="'sobre'">Sobre</p>
+  <p *ngSwitchDefault>Home</p>
+</div>
+

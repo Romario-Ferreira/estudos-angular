@@ -1,0 +1,20 @@
+<h3>Ng-If</h3>
+<br>
+<div>
+  <p *ngIf="cursos.length> 0"> Lista de cursos</p>
+</div>
+<br>
+<div>
+  <p *ngIf="cursos.length == 0"> Lista de cursos vazia</p>
+</div>
+
+<br>
+<div>
+  <p *ngIf="mostrarCursos"> Lista de cursos</p>
+</div>
+<br>
+<div>
+  <p *ngIf="!mostrarCursos"> Lista de cursos vazia</p>
+</div>
+
+<button (click)="onMostrarCursos()">Mostrar Cursos</button>

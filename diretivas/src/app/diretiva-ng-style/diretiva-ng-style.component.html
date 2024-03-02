@@ -1,0 +1,25 @@
+<h3>Diretiva Ng-Style</h3>
+<br>
+<div>
+  <p
+  [style.fontSize]="textoAlterado ? tamanhoFonte +'px' : ''"
+  [style.font-weight]="textoAlterado ? 'bold' : 'normal'"
+  [style.backgroundColor]="textoAlterado ? 'yellow' + '': ''"
+  >Quero ser o maior de todos o lendario sonhador</p>
+</div>
+<br>
+<div>
+  <p
+  [ngStyle]="{
+    'fontSize' : textoAlterado ? tamanhoFonte +'px' : '',
+    'font-weight' : textoAlterado ? 'bold' : 'normal',
+    'backgroundColor' : textoAlterado ? 'yellow' : ''
+  }"
+  >Quero ser o maior de todos o lendario sonhador</p>
+</div>
+
+<button class="btn btn-primary"
+(click)="alterarTexto()">
+Alterar texto
+</button>
+

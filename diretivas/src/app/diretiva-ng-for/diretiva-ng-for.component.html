@@ -1,0 +1,14 @@
+<h3>Ng-For</h3>
+
+<br>
+<button (click)="onMostrarCursos()">Mostrar Cursos</button>
+<div *ngIf="mostrarCursos">
+  <ul>
+    <li *ngFor="let curso of cursos"> {{ curso }}</li>
+  </ul>
+</div>
+<br>
+<div>
+  <p *ngIf="!mostrarCursos"> Lista de cursos vazia</p>
+</div>
+

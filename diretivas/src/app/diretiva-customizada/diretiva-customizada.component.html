@@ -1,0 +1,15 @@
+<p FundoAmarelo>Texto com fundo amarelo.</p>
+<button FundoAmarelo> Botao com fundo amarelo</button>
+<br><br>
+<p highlight>Highlight passando mouse</p>
+<br><br>
+
+<h3>Escolha uma cor</h3>
+
+<div>
+  <input type="radio" name="colors" (click)="color='green'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='red'">Red
+</div>
+<br>
+<p highlight backgroundColor={{color}} defaultColor="''">Highlight me</p>
