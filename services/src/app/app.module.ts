@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MeusCursosModule } from './meus-cursos/meus-cursos.module'
+import { MeusCursosDoisModule } from './meus-cursos-dois/meus-cursos-dois.module';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +13,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MeusCursosModule,
+    MeusCursosDoisModule
   ],
   providers: [],
   bootstrap: [AppComponent]
