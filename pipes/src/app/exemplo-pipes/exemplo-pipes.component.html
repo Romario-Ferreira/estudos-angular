@@ -17,7 +17,7 @@
   <p> Força aplicada o expoente {{ forca | exponencialStrenght: expoent  }}</p>
 </div>
 
-
+<h3> Pipe puro</h3>
 
 <div>
   <input type="text" id="filtroLivros" [(ngModel)]="filtro" #filtroInput>
@@ -31,3 +31,15 @@
     </li>
   </ul>
 </div>
+
+<h3> Pipe Impuro</h3>
+
+<div>
+  <ul>
+    <li *ngFor="let liv of livros | meuFiltroImpuro:filtro ">
+     {{ liv }}
+    </li>
+  </ul>
+</div>
+
+

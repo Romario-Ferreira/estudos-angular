@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ExemploPipesComponent } from './exemplo-pipes/exemplo-pipes.component';
 import { ExponencialStrenghtPipe } from './meus-pipes/exponencial-strenght.pipe';
 import { MeuFiltroPipe } from './meus-pipes/meu-filtro.pipe';
+import { MeuFiltroImpuroPipe } from './meus-pipes/meu-filtro-impuro.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExemploPipesComponent,
     ExponencialStrenghtPipe,
-    MeuFiltroPipe
+    MeuFiltroPipe,
+    MeuFiltroImpuroPipe
   ],
   imports: [
     FormsModule,
