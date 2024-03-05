@@ -1,0 +1,33 @@
+<P> Titulo do livro {{ livro.titulo | uppercase}}</P>
+<p> Data publicaçao {{ livro.dataPublicacao | date }}</p>
+<p> Valor {{ livro.valor | currency: 'BRL'}}</p>
+<p> {{ livro | json }}</p>
+<br><br>
+<div>
+  <input type="text" id="forca" [(ngModel)]="forca">
+  <label for="forca">Força</label>
+</div>
+<div>
+  <input type="text" id="expoent" [(ngModel)]="expoent">
+  <label for="expoent">Expoente</label>
+</div>
+
+<div>
+  <p> Força atual {{ forca }}</p>
+  <p> Força aplicada o expoente {{ forca | exponencialStrenght: expoent  }}</p>
+</div>
+
+
+
+<div>
+  <input type="text" id="filtroLivros" [(ngModel)]="filtro" #filtroInput>
+  <label for="filtroLivros">Filtro</label>
+  <input type="text" id="adicionarLivro"  #adicionarLivro>
+  <label for="adicionarLivro">Nome do Livro</label>
+  <button (click)="salvarLivro(adicionarLivro.value)" >Salvar</button>
+  <ul>
+    <li *ngFor="let liv of livros | meuFiltro:filtro ">
+     {{ liv }}
+    </li>
+  </ul>
+</div>
