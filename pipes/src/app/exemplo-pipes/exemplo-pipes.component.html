@@ -42,4 +42,18 @@
   </ul>
 </div>
 
+<h3> Jeito certo de usar filtro (Por metedo)</h3>
 
+<div>
+  <ul>
+    <li *ngFor="let liv of obterLivros()">
+     {{ liv }}
+    </li>
+  </ul>
+</div>
+
+<h3> Usando Pipe Async </h3>
+<div>
+  <p>{{ valorAsync | async }}</p>
+  <p>{{ valorAsync2 | async }}</p>
+</div>
