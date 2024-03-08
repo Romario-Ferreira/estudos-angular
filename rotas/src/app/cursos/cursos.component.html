@@ -1,1 +1,3 @@
-<p>cursos works!</p>
+<div class="collection">
+  <a [routerLink]="['/cursos',curso.id]"  class="collection-item" *ngFor="let curso of cursos ">{{ curso?.nome }}</a>
+</div>

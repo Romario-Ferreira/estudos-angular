@@ -5,19 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { CursosComponent } from './cursos/cursos.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursosModule } from './cursos/cursos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CursosComponent,
-    CursoDetalheComponent
   ],
   imports: [
     BrowserModule,
+    CursosModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CursosService } from './cursos.service';
+
 
 @Component({
   selector: 'app-cursos',
@@ -6,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./cursos.component.scss']
 })
 export class CursosComponent {
+
+  promessa!: Promise<any>;
+  cursos!: any[];
+
+  constructor(private cursosService: CursosService){
+
+  }
+
+  ngOnInit(){
+    this.promessa = new Promise((resolve,reject) => {
+      setInterval(() => resolve(this.cursos = this.cursosService.getCursos()),1000)
+    });
+    //this.cursos = this.cursosService.getCursos();
+  }
 
 }
