@@ -21,23 +21,24 @@ export class CursoDetalheComponent {
     private cursoSerive: CursosService,
     private router: Router) {
     //this.id = this.router.snapshot.params['id'];
-
   }
 
   ngOnInit(){
     this.incricao = this.activateRoute.params.subscribe(sub => {
       this.idCurso = sub['id'];
+      this.verificaCurso(this.idCurso);
     });
-
-    if(!this.cursoSerive.getCursoById(this.idCurso)){
-      this.router.navigate(['cursos/naoEncontrado']);
-    }else{
-      this.nomeCurso = this.cursoSerive.getCursoById(this.idCurso).nome;
-    }
-
   }
 
   ngOnDestroy(){
     this.incricao.unsubscribe();
+  }
+
+  verificaCurso(id:number){
+    if(!this.cursoSerive.getCursoById(id)){
+      this.router.navigate(['cursos/naoEncontrado']);
+    }else{
+      this.nomeCurso = this.cursoSerive.getCursoById(id).nome;
+    }
   }
 }

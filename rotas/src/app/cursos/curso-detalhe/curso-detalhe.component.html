@@ -1,2 +1,16 @@
-<p>Id do curso: {{ idCurso }}</p>
-<p>Nome do Curso: {{ nomeCurso }}</p>
+<div class="row">
+  <div class="col 12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input disabled value="{{ idCurso }}" id="id_curso" type="text" class="validate">
+        <label class="active" for="id_curso">ID</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input disabled value="{{ nomeCurso }}" id="curso_name" type="text" class="validate">
+        <label for="curso_name">Nome</label>
+      </div>
+    </div>
+  </div>
+</div>
