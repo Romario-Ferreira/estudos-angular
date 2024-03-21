@@ -1,1 +1,20 @@
-<p>cursos-form works!</p>
+<h6>Criar/Editar Cursos</h6>
+
+<div class="row">
+  <div class="col s12">
+    <div class="row">
+      <div class="input-field col s4">
+        <input disabled [(ngModel)]="curso.id" id="disabled" type="text">
+        <label for="disabled" class="active">#</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input  id="nome_curso" type="text" [(ngModel)]="curso.nome">
+        <label for="nome_curso" class="active">Nome do Curso</label>
+      </div>
+    </div>
+  </div>
+</div>
+<a class="waves-effect waves-light btn"
+(click)="salvarCurso()">Salvar</a>

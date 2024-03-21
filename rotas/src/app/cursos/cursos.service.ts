@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable(
 
@@ -20,7 +21,9 @@ export class CursosService {
     }
   ];
 
-  constructor() { };
+  constructor(private router: Router) {
+
+  };
 
   getCursos(){
     return this.cursos;
@@ -33,9 +36,29 @@ export class CursosService {
         return this.getCursos()[i];
       }
     }
-    return false;
+    this.router.navigate(['cursos/naoEncontrado']);;
   }
 
+  // save(curso: any){
+  //   if(curso.id != undefined){
+  //     for(let i = 0 ; i < this.getCursos().length; i++){
+  //       if(this.getCursos()[i].id == curso.id){
+  //         this.getCursos()[i].nome = curso.nome;
+  //         this.router.navigate(['/cursos']);
+  //         return this.getCursos()[i];
+  //       }
+  //     }
+  //   }else{
+  //     let novoCurso = curso;
+  //     novoCurso.id = this.getNextId();
+  //     this.cursos.push(novoCurso);
+  //     this.router.navigate(['/cursos']);
+  //     return novoCurso;
+  //   }
+  // }
 
+  // getNextId(){
+  //   return ++this.getCursos().length;
+  // }
 }
 

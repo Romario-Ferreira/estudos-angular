@@ -12,21 +12,21 @@ import { CursosService } from '../cursos.service';
 })
 export class CursoDetalheComponent {
 
-  idCurso !: number;
-  nomeCurso !: string;
+  curso !: any;
   incricao: Subscription = Subscription.EMPTY;
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private cursoSerive: CursosService,
+    private cursosService: CursosService,
     private router: Router) {
     //this.id = this.router.snapshot.params['id'];
   }
 
   ngOnInit(){
-    this.incricao = this.activateRoute.params.subscribe(sub => {
-      this.idCurso = sub['id'];
-      this.verificaCurso(this.idCurso);
+    this.incricao = this.activateRoute.params.subscribe(param => {
+     this.curso = this.cursosService.getCursoById(param['id']);
+      // this.idCurso = param['id'];
+      // this.verificaCurso(this.idCurso);
     });
   }
 
@@ -34,11 +34,15 @@ export class CursoDetalheComponent {
     this.incricao.unsubscribe();
   }
 
-  verificaCurso(id:number){
-    if(!this.cursoSerive.getCursoById(id)){
-      this.router.navigate(['cursos/naoEncontrado']);
-    }else{
-      this.nomeCurso = this.cursoSerive.getCursoById(id).nome;
-    }
+  editarCurso(){
+    this.router.navigate(['/cursos',this.curso.id,'editar']);
   }
+
+  // verificaCurso(id:number){
+  //   if(!this.cursoSerive.getCursoById(id)){
+  //     this.router.navigate(['cursos/naoEncontrado']);
+  //   }else{
+  //     this.nomeCurso = this.cursoSerive.getCursoById(id).nome;
+  //   }
+  // }
 }

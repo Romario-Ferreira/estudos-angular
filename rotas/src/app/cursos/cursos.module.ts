@@ -7,6 +7,7 @@ import { CursosService } from "./cursos.service";
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursosRoutingModule } from "./cursos-routing.module";
 import { CursosFormComponent } from './cursos-form/cursos-form.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations:[
@@ -17,6 +18,7 @@ import { CursosFormComponent } from './cursos-form/cursos-form.component';
   ],
   imports:[
     CommonModule,
+    FormsModule,
     CursosRoutingModule
   ],
   providers:[
