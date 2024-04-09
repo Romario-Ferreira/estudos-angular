@@ -24,10 +24,10 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule
   ],
   providers: [
-    AuthService,
-    [{
-      provide: Renderer2,
-    }]
+    AuthService
+    // [{
+    //   provide: Renderer2,
+    // }]
   ],
   bootstrap: [AppComponent]
 })

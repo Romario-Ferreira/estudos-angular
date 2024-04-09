@@ -7,9 +7,10 @@ import { LoginComponent } from './login/login.component';
 // import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 // import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './guards';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
+  {path:'', component: HomeComponent , canActivate: [AuthGuard]},
   {path:'login', component: LoginComponent},
   // {path:'cursos', component: CursosComponent},
   // {path:'cursos/naoEncontrado', component: CursoNaoEncontradoComponent},

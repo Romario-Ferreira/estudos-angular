@@ -5,9 +5,10 @@ import { CursosComponent } from "./cursos.component";
 import { CursoNaoEncontradoComponent } from "./curso-nao-encontrado/curso-nao-encontrado.component";
 import { CursoDetalheComponent } from "./curso-detalhe/curso-detalhe.component";
 import { CursosFormComponent } from "./cursos-form/cursos-form.component";
+import { AuthGuard } from "../guards";
 
 const cursosRoutes: Routes = [
-  {path:'cursos', component: CursosComponent,
+  {path:'cursos', component: CursosComponent, canActivate: [AuthGuard],
     children:[
       {path:'naoEncontrado', component: CursoNaoEncontradoComponent},
       // {path:'novo', component: CursosFormComponent},
