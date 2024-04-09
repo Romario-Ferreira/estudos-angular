@@ -13,6 +13,7 @@ export class CursosFormComponent {
 
   curso !: any;
   inscriçao: Subscription = Subscription.EMPTY;
+  hasUnsavedChanges: boolean = false;
 
   constructor(
     private cursosService: CursosService,
@@ -38,5 +39,11 @@ export class CursosFormComponent {
 
   salvarCurso(){
    //this.cursosService.save(this.curso);
+   this.hasUnsavedChanges = false;
   }
+
+  canDeactivate(){
+    return !this.hasUnsavedChanges;
+  }
+
 }

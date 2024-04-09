@@ -10,7 +10,7 @@
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <input  id="nome_curso" type="text" [(ngModel)]="curso.nome">
+        <input  id="nome_curso" type="text" [(ngModel)]="curso.nome" (input)="hasUnsavedChanges = true">
         <label for="nome_curso" class="active">Nome do Curso</label>
       </div>
     </div>
