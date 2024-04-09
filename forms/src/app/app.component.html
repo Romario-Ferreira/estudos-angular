@@ -1,0 +1,19 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['form-template']">Form Template</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['form-reactive']">Form Reactive</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
