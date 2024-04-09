@@ -10,7 +10,7 @@ const cursosRoutes: Routes = [
   {path:'cursos', component: CursosComponent,
     children:[
       {path:'naoEncontrado', component: CursoNaoEncontradoComponent},
-      {path:'novo', component: CursosFormComponent},
+      // {path:'novo', component: CursosFormComponent},
       {path:':id', component: CursoDetalheComponent},
       {path:':id/editar', component: CursosFormComponent}
     ]}

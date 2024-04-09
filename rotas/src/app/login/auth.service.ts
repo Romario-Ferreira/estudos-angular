@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { User } from './user';
@@ -14,6 +14,7 @@ export class AuthService {
     password: '123456'
   }
 
+  isAuthenticatedEmiter: EventEmitter<boolean> = new EventEmitter;
   isAuthenticated: boolean = false;
 
   constructor(
@@ -23,13 +24,15 @@ export class AuthService {
   authUsuario(usuario: User){
     if(this.usuario.email == usuario.email &&
       this.usuario.password == usuario.password){
-      this.isAuthenticated = true;
+      this.isAuthenticatedEmiter.emit(this.isAuthenticated = true);
       this.router.navigate(['/']);
     }else{
       this.router.navigate(['/login']);
     }
-    return this.isAuthenticated;
+   return this.isAuthenticated;
   }
 
-
+  logoff(){
+    this.isAuthenticatedEmiter.emit(this.isAuthenticated = false);
+  }
 }
