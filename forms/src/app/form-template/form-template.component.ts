@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-template',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class FormTemplateComponent {
 
+  name!: string;
+  email!: string;
+
+  onSubmit(form: FormGroup){
+    console.log(form);
+  }
 }
