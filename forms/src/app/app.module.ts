@@ -22,6 +22,9 @@ import { FormDebugComponent } from './form-debug/form-debug.component';
     AppRoutingModule,
     NgbModule
   ],
+  exports:[
+    FormsModule
+  ],
   providers: [
     provideClientHydration()
   ],

@@ -2,22 +2,92 @@
   <form #form="ngForm" (ngSubmit)="onSubmit(form.form)">
 
     <div class="row">
-      <div class="mb-3 col-8">
-        <label for="name" class="form-label">Your name</label>
-        <input type="text" class="form-control" id="name" placeholder="John Poe" name="name"
-        ngModel required>
+      <div class="mb-3 col-10">
+        <label for="name" class="form-label ">Your name</label>
+        <input type="text" class="form-control"
+        [class.is-valid]="name.touched && name.valid"
+        [class.is-invalid]="name.touched && !name.valid"
+        id="name" placeholder="John Poe" name="name"
+        #name="ngModel" ngModel required aria-describedby="invalidNameFeedback">
+        <div id="invalidNameFeedback" class="invalid-feedback">
+          Please enter a Name.
+        </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="mb-3 col-8">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"
-        ngModel required email>
+      <div class="mb-3 col-10">
+        <label for="email" class="form-label control-label">Email address</label>
+        <input type="email" class="form-control"
+        [class.is-valid]="email.touched && email.valid"
+        [class.is-invalid]="email.touched && !email.valid"
+        id="email" placeholder="name@example.com" name="email"
+        #email="ngModel" ngModel required email aria-describedby="invalidEmailFeedback">
+        <div id="invalidEmailFeedback" class="invalid-feedback">
+          Please enter a valid Email.
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div class="mb-3 col-6">
+        <label for="cep" class="form-label control-label">CEP</label>
+        <input type="text" class="form-control"
+        [class.is-valid]="cep.touched && cep.valid"
+        [class.is-invalid]="cep.touched && !cep.valid"
+        id="cep" placeholder="01001000" name="cep"
+        #cep="ngModel" ngModel required aria-describedby="invalidCepFeedback">
+        <div id="invalidCepFeedback" class="invalid-feedback">
+          Please enter a valid cep.
+        </div>
+    </div>
+  </div>
 
-    <button class="btn btn-primary" type="submit" [disabled]="!form.form.valid">Submit</button>
+  <div class="row">
+    <div class="mb-3 col-6">
+      <label for="rua" class="form-label control-label">Rua</label>
+      <input type="text" class="form-control"
+      [class.is-valid]="rua.touched && rua.valid"
+      [class.is-invalid]="rua.touched && !rua.valid"
+      id="rua" name="rua"
+      #rua="ngModel" ngModel required>
+    </div>
+    <div class="mb-3 col-4">
+      <label for="complemento" class="form-label control-label"> Complemento </label>
+      <input type="text" class="form-control"
+      [class.is-valid]="complemento.touched && complemento.valid"
+      id="complemento" name="complemento"
+      #complemento="ngModel" ngModel>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="mb-3 col-2">
+      <label for="numero" class="form-label control-label"> Numero </label>
+      <input type="text" class="form-control"
+      [class.is-valid]="numero.touched && numero.valid"
+      [class.is-invalid]="numero.touched && !numero.valid"
+      id="numero" name="numero"
+      #numero="ngModel" ngModel required>
+    </div>
+    <div class="mb-3 col-4">
+      <label for="cidade" class="form-label control-label"> Cidade </label>
+      <input type="text" class="form-control"
+      [class.is-valid]="cidade.touched && cidade.valid"
+      [class.is-invalid]="cidade.touched && !cidade.valid"
+      id="cidade" name="cidade"
+      #cidade="ngModel" ngModel required>
+    </div>
+    <div class="mb-3 col-4">
+      <label for="estado" class="form-label control-label"> Estado </label>
+      <input type="text" class="form-control"
+      [class.is-valid]="estado.touched && estado.valid"
+      [class.is-invalid]="estado.touched && !estado.valid"
+      id="estado" name="estado"
+      #estado="ngModel" ngModel required>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!form.form.valid">Submit</button>
+  <app-form-debug [form]="form"></app-form-debug>
   </form>
 </div>
+
