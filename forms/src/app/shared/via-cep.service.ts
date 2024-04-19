@@ -10,6 +10,6 @@ export class ViaCepService {
   constructor(private http: HttpClient) { }
 
   getByCep(cep: string){
-    return this.http.get(`https://viacep.com.br/ws/${cep}/json/`);
+    return this.http.get<any>(`https://viacep.com.br/ws/${cep}/json/`);
   }
 }

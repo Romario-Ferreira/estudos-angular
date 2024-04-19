@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ViaCepService } from '../shared/via-cep.service';
 import { json } from 'stream/consumers';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-form-template',
@@ -32,10 +33,16 @@ export class FormTemplateComponent {
     console.log(form);
   }
 
-  autoCompleteEndereco(cep: string){
-    this.viaCepService.getByCep(cep).subscribe(resp =>
-      console.log(resp as string)
-    );
-    console.log(cep);
+  consultCEP(cep: string, form: FormGroup){
+    this.viaCepService.getByCep(cep).subscribe(resp => {
+      this.completeFieldsOfEndereco(form, resp);
+    });
+    //console.log(cep);
+  }
+
+  private completeFieldsOfEndereco(form: FormGroup<any>, resp: any) {
+    form.get('endereco')?.get('rua')?.setValue(resp.logradouro as string);
+    form.get('endereco')?.get('cidade')?.setValue(resp.localidade as string);
+    form.get('endereco')?.get('estado')?.setValue(resp.uf as string);
   }
 }

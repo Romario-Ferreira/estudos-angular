@@ -36,7 +36,7 @@
           [class.is-invalid]="cep.touched && !cep.valid"
           id="cep" placeholder="01001000" name="cep"
           #cep="ngModel" ngModel required aria-describedby="invalidCepFeedback"
-          (blur)="autoCompleteEndereco(cep.value)">
+          (blur)="consultCEP(cep.value, form.form)">
           <div id="invalidCepFeedback" class="invalid-feedback">
             Please enter a valid cep.
           </div>
